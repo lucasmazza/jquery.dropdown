@@ -1,2 +1,3 @@
 .dropdown-container{position:relative}
-.dropdown-items{display:none;position:absolute}
+.dropdown-items{display:none;position:absolute;}
+.dropdown-items a{display:block}
