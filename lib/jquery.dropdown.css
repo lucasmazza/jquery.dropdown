@@ -1,3 +1,4 @@
 .dropdown-container{position:relative}
+.dropdown-header:hover{cursor:pointer}
 .dropdown-items{display:none;position:absolute;}
 .dropdown-items a{display:block}
