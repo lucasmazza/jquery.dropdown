@@ -10,20 +10,41 @@
   <title>jquery.dropdown example page</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
   <link rel='stylesheet' href='../lib/jquery.dropdown.css'>
+  <link rel='stylesheet' href='example.css'>
 </head>
 <body>
+  <h1>jquery.dropdown Example page</h1>
+  <div class='examples'>
+    <h2>Simple usage</h2>
+    <select id='basic'>
+      <option value='1'>The Matrix</option>
+      <option value='2'>The Matrix Reloaded</option>
+      <option value='3'>The Matrix Revolution</option>
+    </select>
+    <div class='line'></div>
+    <h2>Fade effect</h2>
+    <select id='fade'>
+      <option value='1'>The Matrix</option>
+      <option value='2'>The Matrix Reloaded</option>
+      <option value='3'>The Matrix Revolution</option>
+    </select>
+    <div class='line'></div>
+    <h2>Custom class</h2>
+    <select id='red'>
+      <option value='1'>The Matrix</option>
+      <option value='2'>The Matrix Reloaded</option>
+      <option value='3'>The Matrix Revolution</option>
+    </select>
 
-  <select>
-    <option value='1'>The Matrix</option>
-    <option value='2'>The Matrix Reloaded</option>
-    <option value='3'>The Matrix Revolution</option>
-  </select>
+  </div>
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
   <script src="../lib/jquery.dropdown.js"></script>
   <script>
     $(function($){
-      $('select').dropdown();
+      $('#basic').dropdown({classes:'clearfix'});
+      $('#fade').dropdown({classes:'clearfix',slide: false});
+      $('#red').dropdown({classes:'clearfix red'});
     });
   </script>
 </body>

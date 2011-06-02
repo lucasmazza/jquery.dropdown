@@ -1,0 +1,126 @@
+.clearfix
+  zoom 1
+  &:before, &:after
+    content "\0020"
+    display block
+    height: 0
+    visibility hidden
+  &:after
+    clear both
+
+.left
+  float left
+.right
+  float right
+
+opacity(n)
+  opacity n
+  filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
+
+border-radius()
+  -webkit-border-radius arguments
+  -moz-border-radius arguments
+  border-radius arguments
+
+gradient(begin end)
+  filter unquote("progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='" +  begin + "', endColorstr='"+end+"')")
+  background -moz-linear-gradient(top, begin, end)
+  background -webkit-gradient(linear, 0% 0%, 0% 100%, from(begin), to(end))
+
+box-shadow()
+  -webkit-box-shadow arguments
+  -moz-box-shadow arguments
+  box-shadow arguments
+
+html
+  background-color #EAEAEA
+
+body
+  font: 14px / 1.4 'Lucida Grande', Verdana, Verdana, Arial, Helvetica, sans-serif
+  color #444
+
+h1, h2
+  font-weight bold
+  text-align center
+
+h1
+  margin 40px 0 10px
+  font-size 20px
+  color #222
+  text-shadow 1px 1px 1px #999
+
+h2
+  font-size 16px
+  margin 5px 0 10px
+  color #b83000
+  text-shadow 1px 1px 1px #AAA
+
+.examples
+  border-radius 5px
+  border 1px solid #AAA
+  background #FFF
+  padding 20px 0
+  width 800px
+  margin 0 auto
+
+.line
+  width 100%
+  margin-top 15px
+  border-top 1px dotted #AAA
+  height 0
+
+.dropdown-container
+  margin 0 auto
+  width 230px
+  border 1px solid #CCC
+  border-radius 6px
+
+  .dropdown-header
+    position relative
+    z-index 0
+  .dropdown-current, .dropdown-expand
+    height 22px
+    line-height 22px
+    float left
+  .dropdown-current
+    background-color #FFF
+    border-radius 5px 0 0 5px
+    width 200px
+    text-indent 10px
+  .dropdown-expand
+    border-left 1px solid #CCC
+    border-radius 0 5px 5px 0
+    line-height 22px
+    width 29px
+    text-align center
+    color #666
+    text-shadow 1px 1px 1px #FFF
+    font-weight bold
+    gradient #EEE, #CCC
+  .dropdown-items
+    z-index 1
+    width 220px
+    top 22px
+    left -1px
+    border-radius 0 0 5px 5px
+    border 1px solid #CCC
+    padding 5px
+    background-color #FFF
+
+  &.expanded
+    border-radius 6px 6px 0 0
+    .dropdown-expand
+      border-radius 0 5px 0 0
+
+  &.red
+    border-color #990000
+    .dropdown-current
+      background rgba(#990000, 0.2)
+    .dropdown-expand
+      border-left 1px solid #990000
+      gradient lighten(#FF0000,10%), darken(#FF0000, 30%)
+      color #FFF
+      text-shadow 1px 1px 1px #222
+    .dropdown-items
+      border-color #990000
+      background rgba(#990000, 0.2)
