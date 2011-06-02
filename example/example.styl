@@ -8,15 +8,6 @@
   &:after
     clear both
 
-.left
-  float left
-.right
-  float right
-
-opacity(n)
-  opacity n
-  filter unquote('progid:DXImageTransform.Microsoft.Alpha(Opacity=' + round(n * 100) + ')')
-
 border-radius()
   -webkit-border-radius arguments
   -moz-border-radius arguments
@@ -39,7 +30,7 @@ body
   font: 14px / 1.4 'Lucida Grande', Verdana, Verdana, Arial, Helvetica, sans-serif
   color #444
 
-h1, h2
+h1, h2, h3, h4
   font-weight bold
   text-align center
 
@@ -55,13 +46,19 @@ h2
   color #b83000
   text-shadow 1px 1px 1px #AAA
 
+h3, h4
+  color #999
+  margin-top 10px
+  font-size 10px
+
 .examples
   border-radius 5px
   border 1px solid #AAA
   background #FFF
-  padding 20px 0
+  padding 10px 0 20px
   width 800px
   margin 0 auto
+  box-shadow 0 0 5px rgba(#999, 0.4)
 
 .line
   width 100%
@@ -73,7 +70,7 @@ h2
   margin 0 auto
   width 230px
   border 1px solid #CCC
-  border-radius 6px
+  border-radius 3px
 
   .dropdown-header
     position relative
@@ -84,12 +81,12 @@ h2
     float left
   .dropdown-current
     background-color #FFF
-    border-radius 5px 0 0 5px
+    border-radius 2px 0 0 2px
     width 200px
     text-indent 10px
   .dropdown-expand
     border-left 1px solid #CCC
-    border-radius 0 5px 5px 0
+    border-radius 0 2px 2px 0
     line-height 22px
     width 29px
     text-align center
@@ -102,15 +99,15 @@ h2
     width 220px
     top 22px
     left -1px
-    border-radius 0 0 5px 5px
+    border-radius 0 0 3px 3px
     border 1px solid #CCC
     padding 5px
     background-color #FFF
 
   &.expanded
-    border-radius 6px 6px 0 0
+    border-radius 3px 3px 0 0
     .dropdown-expand
-      border-radius 0 5px 0 0
+      border-radius 0 2px 0 0
 
   &.red
     border-color #990000
