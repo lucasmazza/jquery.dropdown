@@ -1,4 +1,16 @@
-.dropdown-container{position:relative}
-.dropdown-header:hover{cursor:pointer}
-.dropdown-items{display:none;position:absolute;}
-.dropdown-items a{display:block}
+.dropdown-container {
+  position: relative;
+}
+.dropdown-replaced {
+  display: none;
+}
+.dropdown-header:hover {
+  cursor: pointer;
+}
+.dropdown-items {
+  display: none;
+  position: absolute;
+}
+.dropdown-items a {
+  display: block;
+}

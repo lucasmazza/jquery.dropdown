@@ -21,7 +21,7 @@ createLine = (option) ->
 Creates the related container
 ###
 init = (element, settings) ->
-  $(settings.template(settings.classes)).insertAfter(element.hide())
+  $(settings.template(settings.classes)).insertAfter(element.addClass('dropdown-replaced'))
 
 ###
 Binds all the available events on both element and container
