@@ -22,3 +22,7 @@ task :build do
     io.write(css)
   end
 end
+desc 'builds docs using Docco'
+task :docs do
+  `docco src/*.coffee && mv docs/jquery.dropdown.html docs/index.html && open docs/index.html`
+end
