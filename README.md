@@ -12,6 +12,8 @@ The plugin uses [CoffeeScript](http://jashkenas.github.com/coffee-script) and [S
 
 ## Events
 
+`jquery.dropdown` uses some custom events to make the interactions between the actual `<select />` element and the custom dropdown, which can be triggered manually anytime you want it. You can hide/show the dropdown list, select an existent value or recreated the whole list (useful when you use AJAX calls to setup the option list for your `<select />` element).
+
 * `dropdown.move` - Hide or display the dropdown element.
 * `dropdown.hide` - Hide the dropdown element.
 * `dropdown.select` - Selects the given value in the dropdown and the associated element.
