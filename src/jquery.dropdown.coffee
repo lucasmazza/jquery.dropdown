@@ -1,5 +1,25 @@
 $ = jQuery
 
+# jquery.dropdown Plugin
+# copyright Lucas Mazza
+# https://github.com/lucasmazza/jquery.dropdown
+
+$.fn.extend {}=
+  dropdown: (options) ->
+    defaults =
+      slide: true
+      classes: false
+      template: template
+
+    settings = $.extend {}, defaults, options
+
+    return (@each () ->
+      element = $ this
+      container = init element, settings
+      bind element, container, settings
+      element.trigger 'dropdown.refresh'
+      ).next()
+
 template = (klasses) ->
   css = if klasses then ' ' + klasses else ''
   "
@@ -70,24 +90,3 @@ bind = (element, container, settings) ->
     event.stopPropagation()
     event.preventDefault()
     container.trigger 'dropdown.move'
-
-###
-jquery.dropdown Plugin
-copyright Lucas Mazza
-https://github.com/lucasmazza/jquery.dropdown
-###
-$.fn.extend {}=
-  dropdown: (options) ->
-    defaults =
-      slide: true
-      classes: false
-      template: template
-
-    settings = $.extend {}, defaults, options
-
-    return (@each () ->
-      element = $ this
-      container = init element, settings
-      bind element, container, settings
-      element.trigger 'dropdown.refresh'
-      ).next()
