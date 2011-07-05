@@ -52,9 +52,20 @@ template = (klasses) ->
   </div>"
 
 # Creates a `<li />` with an `<a />` for a given `<option />` element.
+# The `dropdown-entry` class is added to the `<li />` and custom
+# `data-value` attributes are used to store the option original value.
 createLine = (option) ->
   option = $ option
-  $ "<li data-value='#{option.val()}'><a href='javascript:;' data-value='#{option.val()}'>#{option.text()}</a></li>"
+  anchor = $ "<a />",
+    href: 'javascript:;',
+    'data-value': option.val(),
+    text: option.text()
+
+  $("<li />",
+    class: 'dropdown-entry',
+    'data-value': option.val()
+  ).append(anchor)
+
 
 init = (element, settings) ->
   $(settings.template(settings.classes)).insertAfter(element.hide())
@@ -64,14 +75,15 @@ bind = (element, container, settings) ->
   $(document).bind 'click', ->
     container.trigger 'dropdown.hide'
 
+  # All `click` events should select the given item.
+  container.delegate '.dropdown-entry', 'click.dropdown', () ->
+    container.trigger 'dropdown.select', $(this).attr 'data-value'
+
   # Recreates the dropdown list with a `<li />` for each `<option />` element.
   element.bind 'dropdown.refresh', ->
     list = container.find('ul').empty()
     element.find('option').each ->
-      entry = createLine this
-      entry.bind 'click.dropdown', ->
-        container.trigger 'dropdown.select', $(this).attr 'data-value'
-      list.append entry
+      list.append(createLine(this))
     container.trigger 'dropdown.select', element.find(':selected').val()
 
   # Selects the given `value` in both the dropdown and the `<select />` element.
@@ -101,7 +113,7 @@ bind = (element, container, settings) ->
     if settings.slide then items.slideUp(success) else items.fadeOut(success)
 
   # Expands or retracts the dropdown based on it's current status.
-  container.find('.dropdown-current, .dropdown-expand').bind 'click', (event) ->
+  container.delegate '.dropdown-current, .dropdown-expand', 'click', (event) ->
     event.stopPropagation()
     event.preventDefault()
     container.trigger 'dropdown.move'
