@@ -22,6 +22,7 @@ task :build do
     io.write(css)
   end
   `zip jquery.dropdown.#{version}.zip #{js_path} #{css_path}`
+  `git tag -a -m "Version #{version}" v#{version}`
 end
 desc 'builds docs using Docco'
 task :docs do
