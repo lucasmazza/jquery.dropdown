@@ -1,4 +1,4 @@
-version = "0.0.1"
+version = "0.0.2"
 
 coffee_path = File.expand_path("../src/jquery.dropdown.coffee",   __FILE__)
 stylus_path = File.expand_path("../src/jquery.dropdown.styl",     __FILE__)
@@ -21,6 +21,7 @@ task :build do
     css = Stylus.compile(File.read(stylus_path), :compress => true)
     io.write(css)
   end
+  `zip jquery.dropdown.#{version}.zip #{js_path} #{css_path}`
 end
 desc 'builds docs using Docco'
 task :docs do
