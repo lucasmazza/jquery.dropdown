@@ -9,18 +9,18 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>jquery.dropdown example page</title>
   <link rel="stylesheet" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
-  <link rel='stylesheet' href='lib/jquery.dropdown.css'>
+  <link rel='stylesheet' href='../lib/jquery.dropdown.css'>
   <link rel='stylesheet' href='example.css'>
 </head>
 <body>
- <a href="http://github.com/lucasmazza/jquery.dropdown"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
- <h1>jquery.dropdown Example page</h1>
+  <h1><a href='https://github.com/lucasmazza/jquery.dropdown'>jquery.dropdown</a> Example page</h1>
+  <small>Or you can check the <a href='http://lucasmazza.github.com/jquery.dropdown/jquery.dropdown.html'>annotated source code</a>.</small>
   <div class='examples'>
     <h2>Simple usage</h2>
     <select id='basic'>
-      <option value='1'>The Matrix</option>
-      <option value='2'>The Matrix Reloaded</option>
-      <option value='3'>The Matrix Revolution</option>
+      <option value='The Matrix'>The Matrix</option>
+      <option value='The Matrix Reloaded'>The Matrix Reloaded</option>
+      <option value='The Matrix Revolution'>The Matrix Revolution</option>
     </select>
     <div class='line'></div>
     <h2>Fade effect</h2>
@@ -38,9 +38,10 @@
     </select>
 
   </div>
-
+  <h3>The style displayed here is not shipped with the plugin.</h3>
+  <h4>© 2011 Lucas Mazza / MIT License</h4>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6/jquery.js"></script>
-  <script src="lib/jquery.dropdown.js"></script>
+  <script src="../lib/jquery.dropdown.js"></script>
   <script>
     $(function($){
       $('#basic').dropdown({classes:'clearfix'});
