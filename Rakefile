@@ -26,5 +26,5 @@ task :build do
 end
 desc 'builds docs using Docco'
 task :docs do
-  `docco src/*.coffee && mv docs/jquery.dropdown.html docs/index.html && open docs/index.html`
+  system "docco src/*.coffee"
 end
