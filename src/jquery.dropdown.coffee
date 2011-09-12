@@ -88,7 +88,7 @@ bind = (element, container, settings) ->
 
   # Selects the given `value` in both the dropdown and the `<select />` element.
   container.bind 'dropdown.select', (event, value) ->
-    selected = container.find "a[data-value=#{value}]"
+    selected = container.find "a[data-value='#{value}']"
     placeholder = container.find '.dropdown-current'
 
     placeholder.text ''

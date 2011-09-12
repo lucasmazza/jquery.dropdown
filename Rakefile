@@ -1,4 +1,4 @@
-version = "0.0.2"
+version = "0.0.3"
 
 coffee_path = File.expand_path("../src/jquery.dropdown.coffee",   __FILE__)
 stylus_path = File.expand_path("../src/jquery.dropdown.styl",     __FILE__)
